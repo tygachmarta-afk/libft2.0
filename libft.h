@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 16:24:55 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/19 16:59:30 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/05/18 11:27:23 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/05/28 14:38:35 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef LIBFT_H
+# define LIBFT_H
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	i;
+# include <unistd.h>
+# include <stdlib.h>
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
-	}
-	return (0);
-}
+int	ft_strlen(const char *str);
+int	ft_atoi(const char *str);
+
+#endif

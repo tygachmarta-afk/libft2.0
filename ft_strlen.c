@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 16:24:55 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/19 16:59:30 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/05/19 15:31:18 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/05/19 15:43:44 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i] != '\0')
 		i++;
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
-	}
-	return (0);
+	return (i);
 }
+/*
+int main(void)
+{
+	printf("%d\n", ft_strlen("ciao"));
+	printf("%d\n", ft_strlen("42"));
+	printf("%d\n", ft_strlen(""));
+}
+*/

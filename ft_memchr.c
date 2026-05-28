@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <student.42.fr>                     +#+  +:+       +#+        */
+/*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-05-24 14:07:29 by marvin            #+#    #+#             */
-/*   Updated: 2026-05-24 14:07:29 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/28 14:22:33 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/05/28 14:28:20 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*str;
+	size_t	i;
+	char	*str;
 
-	str = (unsigned char *)s;
+	str = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		if (str[i] == (unsigned char)c)
+		if (str[i] == (char)c)
 			return ((void *)&str[i]);
 		i++;
 	}

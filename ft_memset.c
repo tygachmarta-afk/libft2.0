@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 16:24:55 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/19 16:59:30 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/05/21 12:31:46 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/05/28 14:08:53 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char	*ptr;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	ptr = (unsigned char *)s;
+	while (n > 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		*ptr = (unsigned char)c;
+		ptr++;
+		n--;
 	}
-	return (0);
+	return (s);
 }
+/*
+int main()
+{
+	char str[] = "Taylor!";
+
+	printf("%s\n", (char *)ft_memset(str, 'l', 5));
+}
+*/

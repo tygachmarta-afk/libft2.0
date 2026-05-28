@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 16:24:55 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/19 16:59:30 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/05/26 12:22:40 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/05/28 13:51:00 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	i;
+	void	*ptr;
+	size_t	total;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
-	}
-	return (0);
+	if (size != 0 && count > SIZE_MAX / size)
+		return (NULL);
+	total = count * size;
+	ptr = malloc(total);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, total);
+	return (ptr);
 }
+/*
+int main(void)
+{
+    size_t count = SIZE_MAX;
+    size_t size = 2;
+
+    printf("%zu\n", count * size);
+
+    return (0);
+}*/

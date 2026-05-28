@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 16:24:55 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/19 16:59:30 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/05/21 14:24:47 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/05/28 13:59:05 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*d;
+	char	*s;
 
+	d = dest;
+	s = (char *)src;
 	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	while (i < n)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		d[i] = s[i];
+		i++;
 	}
-	return (0);
+	return (dest);
 }
+/*
+int main()
+{
+	char src[] = "Hello";
+    char dest[10];
+
+    ft_memcpy(dest, src, 6);
+
+    printf("src  = %s\n", src);
+    printf("dest = %s\n", dest);
+
+    return 0;
+}*/
