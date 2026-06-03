@@ -11,15 +11,11 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	ft_memset(s, 0, n);
 }
 /*
 int main(void)

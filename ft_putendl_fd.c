@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 13:37:13 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/28 13:48:28 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/06/03 13:09:22 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/06/03 13:09:24 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <strings.h>
-#include <stdio.h>
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+#include "libft.h" 
+void ft_putendl_fd(char *s, int fd)
 {
-	ft_memset(s, 0, n);
+    int i;
+
+    i = 0;
+    while (s[i] != '\0')
+    {
+        write(fd, &s[i], 1);
+        i++;
+    }
+    write(1, "\n", 1);
 }
-/*
-int main()
-{
-	char str[7] = "Taylor!";
-	ft_bzero(str, 7);
-	printf("%s\n", str);
-	return (0);
-}
-*/

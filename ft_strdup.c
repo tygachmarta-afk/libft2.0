@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/03 15:34:52 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/06/03 15:34:54 by mtyhach          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s1) 
 {
@@ -10,7 +23,7 @@ char	*ft_strdup(const char *s1)
     dup = malloc(strlen(s1) + 1);
     if (!dup)
         return (NULL);
-        i = 0;
+    i = 0;
     while (s1[i])
     {
         dup[i] = s1[i];

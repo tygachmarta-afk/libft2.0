@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -18,9 +19,9 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	printf("%d\n", ft_isdigit('3'));
 	printf("%d\n", ft_isdigit('a'));
-}
+}*/

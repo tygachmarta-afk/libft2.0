@@ -1,29 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 13:37:13 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/28 13:48:28 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/06/03 12:41:10 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/06/03 12:41:12 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <strings.h>
 #include <stdio.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void ft_striteri(char *s, void (*f)(unsigned int,
+char*))
 {
-	ft_memset(s, 0, n);
+    unsigned int    i;
+
+    if (!s || !f)
+        return;
+
+    i = 0;
+    while (s[i] != '\0')
+    {
+        f(i, &s[i]);
+        i++;
+    }
 }
 /*
-int main()
+void to_upper(unsigned int i, char *c)
 {
-	char str[7] = "Taylor!";
-	ft_bzero(str, 7);
-	printf("%s\n", str);
-	return (0);
+    (void)i;
+
+    if (*c >= 'a' && *c <= 'z')
+        *c -= 32;
 }
-*/
+
+int main(void)
+{
+    char str[] = "hello";
+
+    ft_striteri(str, to_upper);
+
+    printf("%s\n", str);
+    return (0);
+}*/

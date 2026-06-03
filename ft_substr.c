@@ -9,6 +9,7 @@
 /*   Updated: 2026/05/28 14:19:53 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -22,9 +23,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > s_len - start)
 		len = s_len - start;
-	substr = malloc * (len + 1);
+	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	ft_strcpy(substr, s + start, len + 1);
+	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
 }

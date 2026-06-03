@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/03 15:36:27 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/06/03 15:36:29 by mtyhach          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h> 
 #include <stdio.h> 
-
+#include "libft.h"
 #include <stdlib.h>
 
 static int	ft_isset(char c, const char *set)
@@ -52,7 +64,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	return (trimmed);
 }
-int	main(void)
+/*int	main(void)
 {
 	char	*result;
 
@@ -77,4 +89,4 @@ int	main(void)
 	free(result);
 
 	return (0);
-}
+}*/

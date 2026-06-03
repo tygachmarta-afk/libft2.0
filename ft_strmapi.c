@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 13:37:13 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/28 13:48:28 by mtyhach          ###   ########.fr       */
+/*   Created: 2026/06/03 12:26:29 by mtyhach           #+#    #+#             */
+/*   Updated: 2026/06/03 12:26:31 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <strings.h>
-#include <stdio.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char *ft_strmapi(char const *s, char (*f)(unsigned
+int, char))
 {
-	ft_memset(s, 0, n);
+    char    *newstr;
+    unsigned int    i;
+
+    if (!s || !f)
+            return (NULL);
+
+    newstr = malloc(ft_strlen(s) + 1);
+
+    if (!newstr)
+        return(NULL);
+
+    i = 0;
+    while (s[i])
+    {
+        newstr[i] = f(i, s[i]);
+        i++;
+    }
+    newstr[i] = '\0';
+    return(newstr);
 }
-/*
-int main()
-{
-	char str[7] = "Taylor!";
-	ft_bzero(str, 7);
-	printf("%s\n", str);
-	return (0);
-}
-*/
