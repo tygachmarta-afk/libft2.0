@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
 #include <stdio.h>
-#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -25,10 +25,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (haystack[i] && i < len)
 	{
 		j = 0;
-		while (needle[j]
-			&& haystack[i + j]
-			&& (i + j) < len
-			&& haystack[i + j] == needle[j])
+		while (needle[j] && haystack[i + j] && (i + j) < len && haystack[i
+				+ j] == needle[j])
 		{
 			j++;
 		}
@@ -39,10 +37,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 /*
-int main(void)
+int	main(void)
 {
-    char *res;
+	char *res;
 
-    res = ft_strnstr("Hello World", "World", 11);
-    printf("%s\n", res);
+	res = ft_strnstr("Hello World", "World", 11);
+	printf("%s\n", res);
 }*/

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -28,9 +28,9 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 /*
-int main()
+int	main(void)
 {
-	char str[] = "Taylor!";
+	char	str[] = "Taylor!";
 
 	printf("%s\n", (char *)ft_memset(str, 'l', 5));
 }

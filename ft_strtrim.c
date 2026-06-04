@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> 
-#include <stdio.h> 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdlib.h>
 
 static int	ft_isset(char c, const char *set)
@@ -36,24 +36,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-
 	start = 0;
 	while (s1[start] && ft_isset(s1[start], set))
 		start++;
-
 	end = 0;
 	while (s1[end])
 		end++;
-
 	while (end > start && ft_isset(s1[end - 1], set))
 		end--;
-
 	len = end - start;
-
 	trimmed = (char *)malloc(sizeof(char) * (len + 1));
 	if (!trimmed)
 		return (NULL);
-
 	i = 0;
 	while (i < len)
 	{
@@ -61,7 +55,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	}
 	trimmed[i] = '\0';
-
 	return (trimmed);
 }
 /*int	main(void)

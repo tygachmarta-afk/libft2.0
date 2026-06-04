@@ -10,17 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_isalpha(int c)
 {
-	return ((c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'));
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }
 /*int main(void)
 {
-	printf("%d\n", ft_isalpha('A')); 
+	printf("%d\n", ft_isalpha('A'));
 	printf("%d\n", ft_isalpha('z'));
 	printf("%d\n", ft_isalpha('5')); // 0
 	printf("%d\n", ft_isalpha('@')); // 0

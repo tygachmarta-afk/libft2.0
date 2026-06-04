@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_isascii(int c)
 {
@@ -20,7 +20,7 @@ int	ft_isascii(int c)
 	return (0);
 }
 /*
-int main(void)
+int	main(void)
 {
 	printf("%d\n", ft_isascii('A'));
 	printf("%d\n", ft_isascii(128));

@@ -9,39 +9,36 @@
 /*   Updated: 2026/06/03 12:41:12 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
-void ft_striteri(char *s, void (*f)(unsigned int,
-char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    unsigned int    i;
+	unsigned int	i;
 
-    if (!s || !f)
-        return;
-
-    i = 0;
-    while (s[i] != '\0')
-    {
-        f(i, &s[i]);
-        i++;
-    }
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
 /*
-void to_upper(unsigned int i, char *c)
+void	to_upper(unsigned int i, char *c)
 {
-    (void)i;
-
-    if (*c >= 'a' && *c <= 'z')
-        *c -= 32;
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+		*c -= 32;
 }
 
-int main(void)
+int	main(void)
 {
-    char str[] = "hello";
+	char str[] = "hello";
 
-    ft_striteri(str, to_upper);
+	ft_striteri(str, to_upper);
 
-    printf("%s\n", str);
-    return (0);
+	printf("%s\n", str);
+	return (0);
 }*/

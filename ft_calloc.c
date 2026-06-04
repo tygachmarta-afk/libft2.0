@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -30,12 +30,12 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 /*
-int main(void)
+int	main(void)
 {
-    size_t count = SIZE_MAX;
-    size_t size = 2;
+	size_t count = SIZE_MAX;
+	size_t size = 2;
 
-    printf("%zu\n", count * size);
+	printf("%zu\n", count * size);
 
-    return (0);
+	return (0);
 }*/

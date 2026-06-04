@@ -6,19 +6,24 @@
 /*   By: mtyhach <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 15:31:18 by mtyhach           #+#    #+#             */
-/*   Updated: 2026/05/19 15:43:44 by mtyhach          ###   ########.fr       */
+/*   Updated: 2026/06/04 16:04:23 by mtyhach          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlen(const char *str)
 {
-	ft_memset(s, 0, n);
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
 /*
-int main(void)
+int	main(void)
 {
 	printf("%d\n", ft_strlen("ciao"));
 	printf("%d\n", ft_strlen("42"));

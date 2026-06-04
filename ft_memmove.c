@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
+	size_t				i;
 	unsigned char		*d;
 	const unsigned char	*s;
 
@@ -45,11 +45,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 /*
-int main(void)
+int	main(void)
 {
-	    char str[] = "123456789";
+		char str[] = "123456789";
 
-	        ft_memmove(str + 2, str, 5);
+			ft_memmove(str + 2, str, 5);
 
-		    printf("%s\n", str);
+			printf("%s\n", str);
 }*/

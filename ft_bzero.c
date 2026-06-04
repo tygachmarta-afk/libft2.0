@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
+#include <strings.h>
 
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }
 /*
-int main()
+int	main(void)
 {
-	char str[7] = "Taylor!";
+	char	str[7] = "Taylor!";
+
 	ft_bzero(str, 7);
 	printf("%s\n", str);
 	return (0);
