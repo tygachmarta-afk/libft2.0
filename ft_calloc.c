@@ -11,23 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+//#include <stdint.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
-	size_t	total;
+	void	*array;
 
-	if (size != 0 && count > SIZE_MAX / size)
+	if (size == 0 || nmemb == 0)
+		return (malloc(0));
+	if (nmemb > 0 && size > (size_t)-1 / nmemb)
 		return (NULL);
-	total = count * size;
-	ptr = malloc(total);
-	if (!ptr)
+	array = malloc(size * nmemb);
+	if (!array)
 		return (NULL);
-	ft_bzero(ptr, total);
-	return (ptr);
+	ft_memset(array, 0, nmemb * size);
+	return (array);
 }
 /*
 int	main(void)

@@ -11,75 +11,47 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 
-static int	ft_isset(char c, const char *set)
+size_t	find_start(char const *s1, char const *set)
 {
-	while (*set)
-	{
-		if (*set == c)
-			return (1);
-		set++;
-	}
-	return (0);
+	size_t	start;
+
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	return (start);
+}
+
+size_t	find_end(char const *s1, char const *set, size_t start)
+{
+	size_t	end;
+
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	return (end);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
-	size_t	len;
-	char	*trimmed;
-	size_t	i;
+	char	*str;
+	int		i;
 
+	i = 0;
 	if (!s1 || !set)
 		return (NULL);
-	start = 0;
-	while (s1[start] && ft_isset(s1[start], set))
-		start++;
-	end = 0;
-	while (s1[end])
-		end++;
-	while (end > start && ft_isset(s1[end - 1], set))
-		end--;
-	len = end - start;
-	trimmed = (char *)malloc(sizeof(char) * (len + 1));
-	if (!trimmed)
+	start = find_start(s1, set);
+	end = find_end(s1, set, start);
+	str = malloc(sizeof(char) * (end - start + 1));
+	if (!str)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		trimmed[i] = s1[start + i];
-		i++;
-	}
-	trimmed[i] = '\0';
-	return (trimmed);
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = '\0';
+	return (str);
 }
-/*int	main(void)
-{
-	char	*result;
-
-	result = ft_strtrim("---hello---", "-");
-	printf("1: %s\n", result);
-	free(result);
-
-	result = ft_strtrim("   hello   ", " ");
-	printf("2: %s\n", result);
-	free(result);
-
-	result = ft_strtrim("++--hello--++", "+-");
-	printf("3: %s\n", result);
-	free(result);
-
-	result = ft_strtrim("hello", "-");
-	printf("4: %s\n", result);
-	free(result);
-
-	result = ft_strtrim("------", "-");
-	printf("5: %s\n", result);
-	free(result);
-
-	return (0);
-}*/
